@@ -1,0 +1,19 @@
+# Address to listen.
+address: ":9090"
+
+# Validator is a submodule that allows or denies certificates
+# Decision is made by rules
+# Default action if no allow rules matched is to deny
+# Deny rules always take precedence over allow rules
+# See Syntax in README.MD
+validator:
+  dns:
+    # Rules to allow. Defaults to empty list
+    allow: 
+    - "example.com"     # EXACT: matches only `example.com` in SAN
+    - "*.example.com"   # CHILD: matches single level of subdomain, no wildcards
+    - "+.example.com"   # GRAND: matches 2 or more levels of subdomain, no wildcards
+    # Rules to deny. Defaults to empty list. Same syntax as `allow` list
+    deny: 
+    - "www.example.com" # EXACT: matches only `example.com` in SAN
+    - "*.www.example.com"   # GRAND: matches 2 or more levels of subdomain, no wildcards

@@ -1,0 +1,33 @@
+package webhook
+
+var webhookPayloadRootKnownFields = []string{"x509Certificate", "timestamp"}
+var x509CertificateRootKnownFields = []string{
+	"version",
+	"subject",
+	"rawSubject",
+	"issuer",
+	"serialNumber",
+	"dnsNames",
+	"emailAddresses",
+	"ipAddresses",
+	"uris",
+	"sans",
+	"extensions",
+	"keyUsage",
+	"extKeyUsage",
+	"unknownExtKeyUsage",
+	"subjectKeyId",
+	"authorityKeyId",
+	"ocspServer",
+	"issuingCertificateURL",
+	"crlDistributionPoints",
+	"policyIdentifiers",
+	"basicConstraints",
+	"nameConstraints",
+	"signatureAlgorithm",
+	"publicKey",
+	"publicKeyAlgorithm",
+	"notBefore",
+	"notAfter",
+	"raw",
+}
